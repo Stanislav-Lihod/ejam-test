@@ -1,6 +1,4 @@
 @import './base.css';
-@import "colors.less";
-@import "media.less";
 
 #app{
   display: flex;

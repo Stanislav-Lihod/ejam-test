@@ -45,19 +45,26 @@ main{
   h1{
     font-size: 48px;
     line-height: 1;
+
+    @media @tablet{
+      font-size: 38px;
+      line-height: 140%;
+    }
   }
 
   &__description{
     font-size: 24px;
     color: #4D5254;
     line-height: 1;
-  }
-}
 
-.step-card{
-  border-radius: 10px;
-  background-color: #FAFAFA;
-  padding: 40px;
-  width: 100%;
+    @media @tablet{
+      font-size: 18px;
+      line-height: 140%;
+    }
+
+    @media @mobile{
+      font-size: 16px;
+    }
+  }
 }
 </style>

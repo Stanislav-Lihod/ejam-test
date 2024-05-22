@@ -61,6 +61,14 @@ const product = {
 .step-card{
   display: flex;
   gap: 40px;
+  border-radius: 10px;
+  background-color: #FAFAFA;
+  padding: 40px;
+  width: 100%;
+
+  @media @tablet{
+    padding: 30px 20px;
+  }
 
   &__preview{
     flex-basis: 575px;
@@ -68,6 +76,10 @@ const product = {
     flex-direction: column;
     gap: 24px;
     flex-shrink: 2;
+
+    @media @tablet{
+      flex-shrink: 1;
+    }
 
     img{
       width: 100%;
@@ -86,6 +98,10 @@ const product = {
       line-height: 140%;
       text-transform: capitalize;
       margin-top: -12px;
+
+      @media @tablet{
+        font-size: 24px;
+      }
 
       span{
         color: #2C7EF8;

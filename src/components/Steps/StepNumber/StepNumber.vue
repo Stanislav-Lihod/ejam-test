@@ -37,5 +37,9 @@ import Step from "@/components/Steps/StepNumber/Step.vue";
   justify-content: space-between;
   width: 100%;
   gap: 24px;
+
+  @media @tablet{
+    gap: 16px;
+  }
 }
 </style>

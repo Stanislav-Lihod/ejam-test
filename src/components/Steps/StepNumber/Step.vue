@@ -45,6 +45,17 @@ defineProps({
     border-radius: 50%;
     border: 2px solid #2C7EF8;
     color: #2C7EF8;
+
+    @media @tablet{
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+    }
+
+    @media @mobile{
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &.active{
@@ -64,6 +75,10 @@ defineProps({
       background-image: url("data:image/svg+xml,%3Csvg width='23' height='18' viewBox='0 0 23 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.66638 9L8.32521 16L21.6664 2' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
       background-repeat: no-repeat;
       background-position: center;
+
+      @media @tablet{
+        background-size: 50%;
+      }
     }
   }
 }
