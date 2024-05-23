@@ -1,19 +1,57 @@
 <script setup>
+import HeaderBenefit from "@/components/Features/HeaderBenefit.vue";
 
+const benefits = [
+  {
+    title: '30-DAY SATISFACTION GUARANTEE',
+    logo: 'checkmark'
+  },{
+    title: 'Free delivery on orders over $40.00',
+    logo: 'truck'
+  },{
+    title: '50.000+ HAPPY CUSTOMERS',
+    logo: 'heart'
+  },{
+    title: '100% Money Back Guarantee',
+    logo: 'return'
+  },
+]
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import {Autoplay, Navigation} from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+
+const destroy = (swiper) => {
+  console.log(swiper);
+};
+
+const modules = [Navigation, Autoplay];
 </script>
 
 <template>
   <header>
     <div class="header-benefits">
       <div class="container">
-        <div class="header-benefits__content">
-          <div class="header-benefits__item">30-DAY SATISFACTION GUARANTEE</div>
-          <div class="header-benefits__item">Free delivery on orders over $40.00</div>
-          <div class="header-benefits__item">50.000+ HAPPY CUSTOMERS</div>
-          <div class="header-benefits__item">100% Money Back Guarantee</div>
-        </div>
+        <swiper
+            :modules="modules"
+            class="header-benefits__content"
+            :slides-per-view="'auto'"
+            :loop="true"
+            :space-between="0"
+            navigation
+            @destroy="destroy"
+        >
+          <swiper-slide v-for="item in benefits">
+            <HeaderBenefit v-bind="item"/>
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
+
     <div class="header-logos">
       <div class="container">
         <img src="../assets/images/logo.png" alt="logo">
@@ -33,31 +71,26 @@
 <style lang="less" scoped>
 .header{
   &-benefits{
-    font-size: 12px;
-    line-height: 1;
     background-color: #252F3D;
     padding: 15px 0 13px;
+    overflow: hidden;
 
     @media @tablet{
       padding: 10px 0;
     }
 
     &__content{
-      display: flex;
-      gap: 40px;
-      justify-content: space-between;
-
-      @media @tablet{
-        gap: 24px;
+      .swiper-slide{
+        @media (min-width: 760px){
+          width: auto;
+          flex-shrink: 1;
+        }
       }
     }
 
-    &__item{
-      color: #ffffff;
-      text-transform: uppercase;
-
-      @media @tablet{
-        text-align: center;
+    .container{
+      @media @mobile{
+        padding: 0 20px;
       }
     }
   }
@@ -83,7 +116,7 @@
       }
 
       @media @mobile{
-        max-height: 16px;
+        max-height: 20px;
       }
     }
 
@@ -98,7 +131,51 @@
       @media @mobile{
         gap: 16px;
       }
+
+      img{
+        @media @mobile{
+          max-height: 16px;
+        }
+      }
     }
   }
 }
+</style>
+
+<style>
+
+.swiper-button-prev,
+.swiper-button-next{
+  display: none;
+  @media (max-width: 759px) {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    color: white;
+    background-color: #252F3D;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    margin-top: 0;
+
+    &::after{
+      font-size: 20px;
+    }
+  }
+}
+
+.swiper-button-prev{
+  left: 0;
+}
+.swiper-button-next{
+  right: 0;
+}
+
+.swiper-wrapper{
+  @media (min-width: 760px){
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+
 </style>

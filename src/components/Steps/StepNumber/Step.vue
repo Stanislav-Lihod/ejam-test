@@ -30,7 +30,10 @@ defineProps({
   }
 
   @media @mobile{
+    justify-content: center;
+    text-align: center;
     font-size: 12px;
+    gap: 6px;
   }
 
   &::before{
@@ -53,8 +56,9 @@ defineProps({
     }
 
     @media @mobile{
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
+      margin-right: 0;
     }
   }
 
@@ -79,6 +83,12 @@ defineProps({
       @media @tablet{
         background-size: 50%;
       }
+    }
+  }
+
+  span{
+    @media @mobile{
+      display: none;
     }
   }
 }

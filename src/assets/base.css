@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
+  padding: 0;
 }
 
 body,html {
   min-height: 100vh;
+  min-width: 360px;
   height: 100%;
   color: #000000;
   transition:
@@ -35,4 +34,8 @@ body,html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.bold{
+  font-weight: bold;
 }

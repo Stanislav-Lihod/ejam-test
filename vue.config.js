@@ -1,11 +1,7 @@
 module.exports = {
-  css: {
-    loaderOptions: {
-      less: {
-        lessOptions: {
-          strictMath: true,
-        },
-      },
-    },
-  },
+
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/production-sub-path/'
+    : '/',
+
 };

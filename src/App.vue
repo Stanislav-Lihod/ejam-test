@@ -32,6 +32,16 @@ main{
     flex-direction: column;
     gap: 40px;
     align-items: center;
+
+    @media @mobile{
+      gap: 18px;
+    }
+  }
+
+  @media @mobile{
+    margin: 0;
+    padding: 36px 0 29px;
+    background-color: #FAFAFA;
   }
 }
 
@@ -42,13 +52,23 @@ main{
   gap: 24px;
   text-align: center;
 
+  @media @mobile{
+    gap: 9px;
+  }
+
   h1{
     font-size: 48px;
     line-height: 1;
+    font-weight: 400;
+    text-transform: capitalize;
 
     @media @tablet{
       font-size: 38px;
       line-height: 140%;
+    }
+
+    @media @mobile{
+      font-size: 32px;
     }
   }
 

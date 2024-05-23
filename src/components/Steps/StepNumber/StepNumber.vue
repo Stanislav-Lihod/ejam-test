@@ -1,32 +1,27 @@
 <script setup>
 import Step from "@/components/Steps/StepNumber/Step.vue";
+const steps =[
+  {
+    title: 'Cart Review',
+    checked: true
+  },{
+    title: 'Checkout',
+    checked: true
+  },{
+    title: 'Special Offer',
+    active: true
+  },{
+    title: 'Confirmation'
+  },
+]
 </script>
 
 <template>
   <div class="steps">
     <Step
-        :number=1
-        :title="'Cart Review'"
-        :active=false
-        :checked=true
-    />
-    <Step
-        :number=2
-        :title="'Checkout'"
-        :active=false
-        :checked=true
-    />
-    <Step
-        :number=3
-        :title="'Special Offer'"
-        :active=true
-        :checked=false
-    />
-    <Step
-        :number=4
-        :title="'Confirmation'"
-        :active=false
-        :checked=false
+        v-for="(item,index) in steps"
+        :number="index + 1"
+        v-bind="item"
     />
   </div>
 </template>
@@ -40,6 +35,10 @@ import Step from "@/components/Steps/StepNumber/Step.vue";
 
   @media @tablet{
     gap: 16px;
+  }
+
+  @media @mobile{
+    gap: 14px;
   }
 }
 </style>

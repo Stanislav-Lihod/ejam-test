@@ -98,6 +98,10 @@
     font-size: 16px;
     color: #4D5254;
     line-height: 150%;
+
+    @media @tablet{
+      font-size: 14px;
+    }
   }
 }
 </style>

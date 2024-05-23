@@ -8,9 +8,9 @@ import CTABanner from "@/components/Features/CTABanner.vue";
 const product = {
   title: 'Clarifion Air Ionizer',
   benefits: [
-    'Negative Ion Technology may <span>help with allergens</span>',
-    'Designed for air rejuvenation',
-    'Perfect for every room in all types of places.'
+    'Negative Ion Technology may <span class="bold">help with allergens</span>',
+    'Designed for <span class="bold">air rejuvenation</span>',
+    '<span class="bold">Perfect for every room</span> in all types of places.'
   ],
   description: 'Simply plug a Clarifion into any standard outlet and replace bulky, expensive air purifiers with a simple.',
   rate: 5,
@@ -35,24 +35,13 @@ const product = {
       <div class="step-card__info-title">
         <span>ONE TIME ONLY</span> special price for 6 extra Clarifion for only <span>$14 each</span> ($84.00 total!)
       </div>
+      <img src="/src/assets/images/products/card_item_1.png" alt="Clarifion Air Ionizer" class="step-card__info-image">
       <ProductCard
-        :benefits="product.benefits"
-        :description="product.description"
-        :balance="product.balance"
-        :rate="product.rate"
-        :title="product.title"
-        :price="product.price"
-        :newPrice="product.newPrice"
+        v-bind="product"
       />
-      <DiscountBanner
-        style="margin-top: 11px"
-      />
-      <CTABanner
-        style="margin-top: 13px"
-      />
-      <Guarantee
-        style="margin-top: 14px"
-      />
+      <DiscountBanner />
+      <CTABanner />
+      <Guarantee />
     </div>
   </div>
 </template>
@@ -68,6 +57,13 @@ const product = {
 
   @media @tablet{
     padding: 30px 20px;
+    gap: 24px;
+  }
+
+  @media @mobile{
+    justify-content: center;
+    padding: 0;
+    background-color: transparent;
   }
 
   &__preview{
@@ -79,6 +75,10 @@ const product = {
 
     @media @tablet{
       flex-shrink: 1;
+    }
+
+    @media @mobile{
+      display: none;
     }
 
     img{
@@ -93,6 +93,10 @@ const product = {
     gap: 20px;
     flex-basis: 550px;
 
+    @media @mobile{
+      gap: 18px;
+    }
+
     &-title{
       font-size: 32px;
       line-height: 140%;
@@ -103,8 +107,23 @@ const product = {
         font-size: 24px;
       }
 
+      @media @mobile{
+        margin-top: -6px;
+        text-align: center;
+      }
+
       span{
         color: #2C7EF8;
+      }
+    }
+
+    &-image{
+      display: none;
+
+      @media @mobile{
+        display: block;
+        width: 100%;
+        border-radius: 10px;
       }
     }
   }
