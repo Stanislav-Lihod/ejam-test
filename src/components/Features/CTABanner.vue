@@ -135,6 +135,7 @@
     border-top: 1px solid #CFCFCF;
     padding-top: 12px;
     flex-grow: 1;
+    min-width: 250px;
     justify-content: center;
   }
 

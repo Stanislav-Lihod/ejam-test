@@ -28,7 +28,7 @@ const product = {
         :name="'Ken T'"
         :rate=5
         :verify=true
-        :avatar="'/src/assets/images/icons/avatars/avatr.png'"
+        avatar="./src/assets/images/icons/avatars/avatar.png"
       />
     </div>
     <div class="step-card__info">

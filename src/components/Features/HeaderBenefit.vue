@@ -7,7 +7,7 @@ defineProps({
 
 <template>
   <div class="benefit">
-    <img :src="`/src/assets/images/icons/${logo}.svg`" :alt="logo" />
+    <img :src="`./src/assets/images/icons/${logo}.svg`" :alt="logo" />
     {{title}}
   </div>
 </template>
